@@ -128,7 +128,7 @@ def screen_context() ->None:
 
 def generate_image(text):
     stability_api = client.StabilityInference(
-        key="apikey",
+        key="your_api_key",
         verbose=True,
     )
     # the object returned is a python generator
