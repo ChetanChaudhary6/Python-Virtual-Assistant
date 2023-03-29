@@ -30,7 +30,7 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 g = geocoder.ip('me')
-TMDB="apikey"
+TMDB="your_api_key"
 # data = json.load(open('data.json'))
 
 
@@ -83,7 +83,7 @@ def sendEmail(to, content):
     server.close()
 
 def speak_news():
-    url = 'http://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey={apikey}'
+    url = 'http://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey={your_api_key}'
     news = requests.get(url).text
     news_dict = json.loads(news)
     arts = news_dict['articles']
@@ -99,11 +99,11 @@ def speak_news():
     speak('These were the top headlines, Have a nice day Sir!!..')
 
 def Query() -> None:
-    client = wolframalpha.Client("H4XU4G-2TV57HL3H6")
+    client = wolframalpha.Client("your_api_key")
 # ask the user for a query
     speak("What you want to know")
-    # ques = takeCommand()
-    ques="What is the value sin(90 degree)"
+    ques = takeCommand()
+    # ques="What is the value sin(90 degree)"
     res = client.query(ques)
 # print the result
     for pod in res.pods:
@@ -115,7 +115,7 @@ def screen_context() ->None:
     filename=screenshot()
     url = 'https://api.ocr.space/parse/image'
     payload = {
-        'apikey': 'apikey',
+        'apikey': 'your_api_key',
         'language': 'eng',
         'isOverlayRequired': False
     }

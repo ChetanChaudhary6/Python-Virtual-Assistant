@@ -177,15 +177,15 @@ if __name__ == "__main__":
 
         elif "send message" in query:
                 # You need to create an account on Twilio to use this service
-                account_sid = 'accsid'
-                auth_token = 'authtoken'
+                account_sid = 'your_acc_sid'
+                auth_token = 'your_auth_token'
                 client = Client(account_sid, auth_token)
                 Sender_No=input("Enter your number\n")
                 Receiver_No=input("Enter your friend's number\n")
                 try:
                     message = client.messages \
                                 .create(
-                                    body = "hello",
+                                    body = takeCommand(),
                                     from_=Sender_No,
                                     to =Receiver_No
                                 )
