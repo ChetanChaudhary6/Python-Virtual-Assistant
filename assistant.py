@@ -177,8 +177,8 @@ if __name__ == "__main__":
 
         elif "send message" in query:
                 # You need to create an account on Twilio to use this service
-                account_sid = 'AC9bc3340d93bb39eb2ddc3696f2af6b70'
-                auth_token = 'fae7a9aa11d9d19c1bffc411d8e23e72'
+                account_sid = 'accsid'
+                auth_token = 'authtoken'
                 client = Client(account_sid, auth_token)
                 Sender_No=input("Enter your number\n")
                 Receiver_No=input("Enter your friend's number\n")

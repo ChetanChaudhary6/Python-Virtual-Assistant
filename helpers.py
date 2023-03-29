@@ -30,7 +30,7 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 g = geocoder.ip('me')
-TMDB="9f303944ef65baccc17358c911adf8d6"
+TMDB="apikey"
 # data = json.load(open('data.json'))
 
 
@@ -83,7 +83,7 @@ def sendEmail(to, content):
     server.close()
 
 def speak_news():
-    url = 'http://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey=3adaadf233fd4b7dbbe1f2323787b761'
+    url = 'http://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey={apikey}'
     news = requests.get(url).text
     news_dict = json.loads(news)
     arts = news_dict['articles']
@@ -115,7 +115,7 @@ def screen_context() ->None:
     filename=screenshot()
     url = 'https://api.ocr.space/parse/image'
     payload = {
-        'apikey': 'K88767649388957',
+        'apikey': 'apikey',
         'language': 'eng',
         'isOverlayRequired': False
     }
@@ -128,7 +128,7 @@ def screen_context() ->None:
 
 def generate_image(text):
     stability_api = client.StabilityInference(
-        key="sk-zPsdII1rVHsxSuoDDdPFd7oiMuDzYu3SECsQxxduDja9H0n4",
+        key="apikey",
         verbose=True,
     )
     # the object returned is a python generator
